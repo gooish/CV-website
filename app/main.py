@@ -1,5 +1,6 @@
 from flask import Flask, render_template, request
 from telegram.ext import Updater
+from telegram import error
 import logging
 from configparser import ConfigParser
 import os
@@ -26,7 +27,10 @@ def form():
 def hello():
 
     requester_ip = request.remote_addr
-    updater.bot.send_message(chat_id = recipient_chat_id, text="New message from " + requester_ip + ":\n" + request.form['to'])
+    try:
+        updater.bot.send_message(chat_id = recipient_chat_id, text="New message from " + requester_ip + ":\n" + request.form['to'])
+    except error.BadRequest:
+        return "Message too long!"
     return render_template('greeting.html', to=request.form['to'])
 
 if __name__ == "__main__":
