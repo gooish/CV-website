@@ -1,0 +1,422 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>Curriculum Vitae</title>
+        <link
+            href="https://fonts.googleapis.com/css2?family=Merriweather:wght@300&display=swap"
+            rel="stylesheet"
+        />
+        <meta charset="utf-8" />
+
+        <style>
+            :root {
+                --oxford: #011638;
+                --cadet: #2e294e;
+                --purple: #9055a2;
+                --kobi: #d499b9;
+                --pink: #e8c1c5;
+            }
+
+            body {
+                scroll-behavior: smooth;
+                font-family: "Merriweather", serif;
+                background-color: var(--oxford);
+                color: var(--pink);
+                margin: 0px;
+                font-size: 120%;
+                margin-bottom: 2rem;
+            }
+
+            .boundary {
+                border-left: 20rem solid var(--oxford);
+                border-right: 20rem solid var(--oxford);
+            }
+
+            @media (max-width: 1510px) {
+                body {
+                    font-size: 75%;
+                }
+
+                .boundary {
+                    border-left: 3rem solid var(--oxford);
+                    border-right: 3rem solid var(--oxford);
+                }
+
+                .topnav {
+                    font-size: 150%;
+                }
+            }
+
+            .topnav {
+                background-color: var(--cadet);
+                overflow-x: hidden;
+                position: fixed;
+                width: 100%;
+                top: 0;
+                margin: 0px;
+            }
+
+            /* top navbar style */
+            .topnav a,
+            p {
+                float: left;
+                color: var(--pink);
+                text-align: center;
+                padding: 14px 16px;
+                text-decoration: none;
+                font-size: 120%;
+            }
+
+            /* hovered navbar links style */
+            .topnav a:hover {
+                background-color: var(--pink);
+                color: var(--cadet);
+            }
+
+            /* top link style */
+            .topnav a.top {
+                background-color: var(--kobi);
+                color: var(--cadet);
+            }
+
+            .logotype {
+                padding: 4rem;
+                text-align: center;
+                font-size: 150%;
+            }
+
+            .label {
+                font-size: 150%;
+                text-align: center;
+            }
+
+            .container {
+                display: grid;
+                grid-template-columns: 20rem auto;
+                grid-template-areas: "label item" "label item";
+                grid-row-gap: 1rem;
+
+                background-color: var(--cadet);
+                padding: 1rem 0rem;
+            }
+
+            .list-container {
+                text-align: center;
+                display: grid;
+                grid-template-columns: 20rem auto;
+                grid-template-areas: "label item1 item2 item3 item4 item5" "label item1 item2 item3 item4 item5";
+                grid-row-gap: 1rem;
+
+                background-color: var(--cadet);
+                color: var(--pink);
+                padding: 1rem 0rem;
+            }
+
+            .languages-container {
+                text-align: center;
+                display: grid;
+                grid-template-columns: 20rem auto;
+                grid-template-areas: "label item item" "label item item" "label item item" "label item item";
+                grid-row-gap: 1rem;
+
+                background-color: var(--cadet);
+                padding: 1rem 0rem;
+            }
+
+            .footer {
+                display: grid;
+                grid-template-columns: auto auto;
+                grid-row-gap: 1rem;
+
+                background-color: var(--cadet);
+                padding: 1rem 0rem;
+                text-align: center;
+                align-content: center;
+            }
+
+            textarea {
+                width: 100%;
+                height: 150px;
+                padding: 12px 20px;
+                box-sizing: border-box;
+                border: 2px solid var(--oxford);
+                border-radius: 4px;
+                background-color: var(--oxford);
+                resize: vertical;
+                color: var(--pink);
+                font-family: "Merriweather", serif;
+
+            }
+
+            button {
+                font-size: x-large;
+                padding: 10px 24px;
+                color: var(--pink);
+                background-color: var(--oxford);
+                border: none;
+            }
+
+            button:hover {
+                font-size: x-large;
+                padding: 10px 24px;
+                color: var(--oxford);
+                background-color: var(--pink);
+                border: none;
+            }
+
+            .sendform {
+                background-color: var(--cadet);
+                padding: 2rem;
+                text-align: center;
+            }
+
+            .item {
+                text-align: left;
+            }
+
+            a {
+                color: var(--pink);
+            }
+
+            a:visited {
+                color: #d499b9;
+            }
+
+            a:hover {
+                color: #9055a2;
+            }
+        </style>
+    </head>
+    <body>
+        <div class="topnav">
+            <a class="top" href="#elli">Elli Mansikka </a>
+            <a href="#koulutus">Koulutus</a>
+            <a href="#tyokokemus">Työkokemus</a>
+            <a href="#taidot">Taidot</a>
+            <a href="#luottamustehtavat">Vastuutehtävät</a>
+            <a href="#contact">Yhteystiedot</a>
+        </div>
+        <div class="logotype">
+            <h1>Elli Mansikka</h1>
+            <h3>Curriculum vitae</h3>
+        </div>
+
+        <div class="boundary">
+            <div
+                class="container"
+                id="elli"
+                style="grid-template-columns: 24rem auto; padding-top: 2rem"
+            >
+                <!-- Div for subject of current paragraph -->
+                <div class="label" style="grid-row: span 1">
+                    <img style="width: auto; height: auto; max-width: 80%"
+                    src={{ url_for('static', filename='images/ElliKuva2.jpg') }}
+                    alt="Kuva Ellistä" />
+                </div>
+
+                <!-- Div for content of current paragraph -->
+                <div class="item" style="grid-row: span 2; padding-right: 1em">
+                    Moikka! Olen Elli Mansikka, toisen vuoden
+                    tietojenkäsittelytieteen opiskelija Tampereen yliopistossa.
+                    Olen sekä ohjelmoinut että ylläpitänyt erilaisia
+                    järjestelmiä jo peruskoululaisesta saakka, ja yliopistosta
+                    olen saanut valmiudet hyödyntää näitä taitoja myös
+                    tosimaailmassa. Olen erityisen kiinnostunut perinteisestä
+                    natiivista sovelluskehityksestä ja Javan tyylisistä
+                    kääntyvistä virtuaalikonekielistä, mutta myös Python ja
+                    JavaScript onnistuvat jos tarve on.
+                    <br />
+                    <br />
+                    Opintojeni lisäksi olen aktiivinen ainejärjestötoiminnassa,
+                    ja olenkin Tampereen yliopiston tietojenkäsittelytieteen
+                    ainejärjestö Luupin hallituksen jäsen ja viestintävastaava.
+                    Teknologian lisäksi media onkin toinen suuri
+                    kiinnostuksenkohteeni, ja sen vuoksi olen opetellut paljon
+                    myös valo- ja videokuvaamisesta, editoinnista,
+                    kuvanmuokkauksesta ja musiikintuotannosta. Vaikka nämä
+                    ovatkin minulle lähinnä harrastuksia, koen että erityisesti
+                    videoeditointitaitoni ovat riittävän hyvät monimutkaisempiin
+                    projekteihinkin.
+                    <br /><br />
+                    Kun haluan rentoutua, kuluu aika minulla sujuvasti pianoa ja
+                    kitaraa soittaen, videopelejä pelaten ja erilaista musiikkia
+                    kuunnellen. Useimmiten nämä asiat tapahtuvat samaan aikaan:
+                    ei ole lainkaan harvinaista, että istun tietokoneen ääressä
+                    ja käynnissä on samanaikaisesti sekä Discord-puhelu,
+                    kiinnostava video, ja jokin peli, useimmiten Factorio,
+                    Fallout: New Vegas tai Lego Rock Raiders.
+                    <br /><br />
+                    PS. Muutin nimeäni vuoden 2020 alkupuolella, joten vanhat
+                    työtodistukseni ja projektini ovat osittain yhä tämän
+                    edellisen etunimen alla. Ei huolta, kyseessä on kuitenkin
+                    sama henkilö.
+                </div>
+            </div>
+            <a id="koulutus"></a>
+            <br />
+            <br />
+
+            <div class="container">
+                <!-- Div for subject of current paragraph -->
+                <div class="label" style="grid-row: span 2">Koulutus</div>
+
+                <!-- Div for content of current paragraph -->
+                <div class="item">
+                    Tampereen yliopisto, 2019- <br />
+                    Tietojenkasittelytieteiden kandidaatin tutkinto
+                </div>
+
+                <div class="item">
+                    Tampereen Lyseon Lukio, 2015-2018 <br />
+                    Eurooppa-linja
+                </div>
+            </div>
+
+            <a id="tyokokemus"></a>
+            <br />
+            <br />
+
+            <div class="container">
+                <!-- Div for subject of current paragraph -->
+                <div class="label" style="grid-row: span 2">Työkokemus</div>
+
+                <!-- Div for content of current paragraph -->
+                <div class="item">
+                    Citymarket Nokia, kausiapulainen kesä 2019 <br />
+                    Kassatyöntekijä <br />
+                    <i
+                        >Työhön kuului kassa-, pullonkierrätys-, ja
+                        järjestelytyöskentelyä</i
+                    ><br />
+                </div>
+
+                <div class="item">
+                    Prisma Nokia, kesä- ja joulukausiapulainen joulu 2017 -
+                    joulu 2018
+                    <br />
+                    Kassatyöntekijä<br />
+                    <i
+                        >Työhön kuului kassatyötä sekä pieni määrä
+                        osastotyöskentelyä</i
+                    ><br />
+                </div>
+            </div>
+
+            <a id="taidot"></a>
+
+            <br />
+            <br />
+
+            <div class="list-container">
+                <!-- Div for subject of current paragraph -->
+                <div class="label" style="grid-row: span 2">
+                    Mieluisimmat teknologiat
+                </div>
+
+                <!-- Div for content of current paragraph -->
+                <div class="item">Java</div>
+
+                <div class="item">Python</div>
+
+                <div class="item">Git</div>
+
+                <div class="item">Unix</div>
+
+                <div class="item">SQL</div>
+
+                <div class="item">C#</div>
+
+                <div class="item">HTML</div>
+
+                <div class="item">CSS</div>
+
+                <div class="item">Bash</div>
+
+                <div class="item">C</div>
+            </div>
+
+            <a id="kielet"></a>
+
+            <br />
+            <br />
+
+            <div class="languages-container">
+                <div class="label" style="grid-row: span 4">Kielitaito</div>
+                <div class="item">Suomi</div>
+                <div class="item">Äidinkieli</div>
+
+                <div class="item">Englanti</div>
+                <div class="item">Erinomainen</div>
+
+                <div class="item">Ruotsi</div>
+                <div class="item">Kohtalainen</div>
+
+                <div class="item">Ranska</div>
+                <div class="item">Tyydyttävä</div>
+            </div>
+
+            <a id="luottamustehtavat"></a>
+            <br />
+            <br />
+
+            <div class="container">
+                <!-- Div for subject of current paragraph -->
+                <div class="label" style="grid-row: span 3">Vastuutehtävät</div>
+
+                <!-- Div for content of current paragraph -->
+                <div class="item">
+                    Luuppi ry:n hallitus<br />
+                    Hallituksen jäsen ja tiedotusvastaava <br />
+                    Toimikausi 2021
+                </div>
+
+                <div class="item">
+                    Luuppi ry:n toimihenkilöstö <br />
+                    Tiedotustoimihenkilö <br />
+                    Toimikausi 2020
+                </div>
+
+                <div class="item">
+                    Partiolippukunta Nokian Eräveikot ry <br />
+                    Vartionjohtaja<br />
+                    2014 - 2017
+                </div>
+            </div>
+
+            <a id="contact"></a>
+            <div class="logotype">
+                <h1>Ota yhteyttä:</h1>
+            </div>
+
+            <div class="footer">
+                <p class="fitem">Elli Mansikka</p>
+                <p class="fitem">+358 400 176761</p>
+
+                <p class="fitem">
+                    <a href="https://github.com/gooish">Github</a>
+                </p>
+                <p class="fitem"><a href="https://t.me/gqqish">Telegram</a></p>
+
+                <p style="grid-column: span 2" class="fitemend">
+                    <a href="mailto:mansikkaelli@gmail.com"
+                        >mansikkaelli@gmail.com</a
+                    >
+                </p>
+            </div>
+            <br />
+            <div class="sendform">
+                <form method="post" action="{{ url_for('hello') }}">
+                    <div>
+                        <label for="to">Tai laita viestiä suoraan:</label>
+                        <br /><br />
+                        <textarea name="to" id="to" value=""></textarea>
+                    </div>
+                    <br />
+                    <div>
+                        <button>Lähetä</button>
+                    </div>
+                </form>
+            </div>
+        </div>
+    </body>
+</html>

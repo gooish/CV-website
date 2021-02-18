@@ -1,0 +1,151 @@
+:root {
+    --oxford: #011638;
+    --cadet: #2e294e;
+    --purple: #9055a2;
+    --kobi: #d499b9;
+    --pink: #e8c1c5;
+}
+
+body {
+    scroll-behavior: smooth;
+    font-family: "Merriweather", serif;
+    background-color: var(--oxford);
+    color: var(--pink);
+    margin: 0px;
+    font-size: 120%;
+    margin-bottom: 2rem;
+}
+
+.boundary {
+    border-left: 20rem solid var(--oxford);
+    border-right: 20rem solid var(--oxford);
+}
+
+@media (max-width: 1510px) {
+    body {
+        font-size: 75%;
+    }
+
+    .boundary {
+        border-left: 3rem solid var(--oxford);
+        border-right: 3rem solid var(--oxford);
+    }
+
+    .topnav {
+        font-size: 150%;
+    }
+}
+
+.topnav {
+    background-color: var(--cadet);
+    overflow-x: hidden;
+    position: fixed;
+    width: 100%;
+    top: 0;
+    margin: 0px;
+}
+
+/* top navbar style */
+.topnav a,
+p {
+    float: left;
+    color: var(--pink);
+    text-align: center;
+    padding: 14px 16px;
+    text-decoration: none;
+    font-size: 120%;
+}
+
+/* hovered navbar links style */
+.topnav a:hover {
+    background-color: var(--pink);
+    color: var(--cadet);
+}
+
+/* top link style */
+.topnav a.top {
+    background-color: var(--kobi);
+    color: var(--cadet);
+}
+
+.logotype {
+    padding: 4rem;
+    text-align: center;
+    font-size: 150%;
+}
+
+.label {
+    font-size: 150%;
+    text-align: center;
+}
+
+.container {
+    display: grid;
+    grid-template-columns: 20rem auto;
+    grid-template-areas: "label item" "label item";
+    grid-row-gap: 1rem;
+
+    background-color: var(--cadet);
+    padding: 1rem 0rem;
+}
+
+.list-container {
+    text-align: center;
+    display: grid;
+    grid-template-columns: 20rem auto;
+    grid-template-areas: "label item1 item2 item3 item4 item5" "label item1 item2 item3 item4 item5";
+    grid-row-gap: 1rem;
+
+    background-color: var(--cadet);
+    color: var(--pink);
+    padding: 1rem 0rem;
+}
+
+.languages-container {
+    text-align: center;
+    display: grid;
+    grid-template-columns: 20rem auto;
+    grid-template-areas: "label item item" "label item item" "label item item" "label item item";
+    grid-row-gap: 1rem;
+
+    background-color: var(--cadet);
+    padding: 1rem 0rem;
+}
+
+.footer {
+    display: grid;
+    grid-template-columns: auto auto;
+    grid-row-gap: 1rem;
+
+    background-color: var(--cadet);
+    padding: 1rem 0rem;
+    text-align: center;
+    align-content: center;
+}
+
+textarea {
+    width: 100%;
+    height: 150px;
+    padding: 12px 20px;
+    box-sizing: border-box;
+    border: 2px solid #ccc;
+    border-radius: 4px;
+    background-color: #f8f8f8;
+    resize: none;
+}
+
+.item {
+    text-align: left;
+}
+
+a {
+    color: var(--pink);
+}
+
+a:visited {
+    color: #d499b9;
+}
+
+a:hover {
+    color: #9055a2;
+}
