@@ -23,8 +23,8 @@ app = Flask(__name__)
 def form():
     return render_template('form.html')
 
-@app.route('/hello', methods=['GET', 'POST'])
-def hello():
+@app.route('/send', methods=['GET', 'POST'])
+def send():
 
     requester_ip = request.remote_addr
     try:
