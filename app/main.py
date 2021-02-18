@@ -2,10 +2,11 @@ from flask import Flask, render_template, request
 from telegram.ext import Updater
 import logging
 from configparser import ConfigParser
+import os
 
 # set up parser for reading Telegram tokens from an INI file
 parser = ConfigParser()
-parser.read("config.ini")
+parser.read(os.path.join(os.path.dirname(__file__), r"config.ini"))
 
 # read data from INI file to variables
 recipient_chat_id = int(parser.get("secrets", "recipient_id"))
