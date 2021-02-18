@@ -13,7 +13,7 @@ parser.read(os.path.join(os.path.dirname(__file__), r"config.ini"))
 recipient_chat_id = int(parser.get("secrets", "recipient_id"))
 bot_token = parser.get("secrets", "sender_token")
 
-# set up Telegram uådater bot with token
+# set up Telegram updater bot with token
 logging.basicConfig(format='%(asctime)s - %(name)s - %(levelname)s - %(message)s', level=logging.INFO)
 updater = Updater(token= bot_token, use_context=True)
 

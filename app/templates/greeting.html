@@ -50,13 +50,35 @@
                 color: #9055a2;
             }
 
+            button {
+                font-size: x-large;
+                padding: 10px 24px;
+                color: var(--pink);
+                background-color: var(--oxford);
+                border: none;
+            }
+
+            button:hover {
+                font-size: x-large;
+                padding: 10px 24px;
+                color: var(--oxford);
+                background-color: var(--pink);
+                border: none;
+            }
+
         </style>
     </head>
     <body>
         <div class="container">
             <div>
                 <h1>Viestisi on vastaanotettu!</h1>
-                <p><a href="/">Takaisin</a></p>
+                <button onclick="goBack()">Takaisin</button>
+
+                <script>
+                function goBack() {
+                    window.history.back();
+                }
+                </script>
             </div>
         </div>
         <p>simple-telegram-sender by Elli Mansikka</p>
