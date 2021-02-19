@@ -4,7 +4,7 @@ Simple Flask server and website for a resume with a contact form
 This is a simple Flask webapp with a minimal backend to serve a website with a form and relay the form's responses to Telegram.
 Configuration files are prepared for deploying on Heroku, though the app can (probably) be configured for any WSGI deployment.
 
-## Running the app
+### Running the app
 The app depends on Flask and python-telegram-bot, while the deployment depends on Gunicorn. The app can be debugged by running 
 `python3 wsgi.py` (for no debug flag enabled) and `python app/main.py` (for the Flask debug flag enabled). 
 
@@ -16,3 +16,7 @@ sender_token = ; bot token goes here
 ```
 
 Deploying to Heroku can be done by cloning the repository and pushing it to a Dyno instance
+
+### License
+
+The backend and frontend are completely free and open to anyone, but I retain the right for the page content myself.
