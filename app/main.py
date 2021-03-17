@@ -5,13 +5,14 @@ import logging
 from configparser import ConfigParser
 import os
 
+
 # set up parser for reading Telegram tokens from an INI file
 parser = ConfigParser()
 parser.read(os.path.join(os.path.dirname(__file__), r"config.ini"))
 
-# read data from INI file to variables
-recipient_chat_id = int(parser.get("secrets", "recipient_id"))
-bot_token = parser.get("secrets", "sender_token")
+# read data from sysvars to program
+recipient_chat_id = os.environ['RECIP_TOKEN']
+bot_token = os.environ['SENDER_TOKEN']
 
 # set up Telegram updater bot with token
 logging.basicConfig(format='%(asctime)s - %(name)s - %(levelname)s - %(message)s', level=logging.INFO)
