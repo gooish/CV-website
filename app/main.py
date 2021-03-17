@@ -10,9 +10,15 @@ import os
 parser = ConfigParser()
 parser.read(os.path.join(os.path.dirname(__file__), r"config.ini"))
 
-# read data from sysvars to program
-recipient_chat_id = os.environ['RECIP_TOKEN']
-bot_token = os.environ['SENDER_TOKEN']
+# (try to) read data from sysvars to program
+try:
+    recipient_chat_id = os.environ['RECIP_TOKEN']
+    bot_token = os.environ['SENDER_TOKEN']
+
+# Fall back to conf file if no sysvars exist
+except Exception:
+    recipient_chat_id = int(parser.get("secrets", "recipient_id"))
+    bot_token = parser.get("secrets", "sender_token")
 
 # set up Telegram updater bot with token
 logging.basicConfig(format='%(asctime)s - %(name)s - %(levelname)s - %(message)s', level=logging.INFO)
