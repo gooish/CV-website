@@ -10,14 +10,15 @@ An instance can be found running at https://ttpk.fi/cv/
 The app depends on Flask and python-telegram-bot, while the deployment depends on Gunicorn. The app can be debugged by running 
 `python3 wsgi.py` (for no debug flag enabled) and `python app/main.py` (for the Flask debug flag enabled). 
 
-The app must be configured via the `config.ini` file placed in the `app/` directory. A simple config is as follows:
+The app must be configured either via the `config.ini` file placed in the `app/` directory or via setting the RECIP_TOKEN and SENDER_TOKEN environment variables on the system. A simple config is as follows:
 ```ini
 [secrets]
 recipient_id = ; recipient chatid goes here
 sender_token = ; bot token goes here
 ```
+The INI method is preferrable when deploying on a server with multiple services running, but the environment variable route is preferred when deploying through github.
 
-Deploying to Heroku can be done by cloning the repository and pushing it to a Dyno instance
+Deploying to Heroku can be done by cloning the repository and pushing it to a Dyno instance. You can also fork the repository, and set a Heroku Dyno or other instance to fetch it from Github when changes are made.
 
 ### License
 
